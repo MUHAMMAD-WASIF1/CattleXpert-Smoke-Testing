@@ -9,7 +9,7 @@ module.exports = defineConfig({
       // implement node event listeners here
       require('cypress-mochawesome-reporter/plugin')(on);
     },
-    baseUrl: 'https://clientdemos.cattlexpert.com/Cattlexpert.UI/login.aspx?ReturnUrl=%2fCattlexpert.UI%2fCxHome.aspx#lnkCxHome'
+    baseUrl : 'https://clientdemos.cattlexpert.com/Cattlexpert.UI',
   },
 });
 
