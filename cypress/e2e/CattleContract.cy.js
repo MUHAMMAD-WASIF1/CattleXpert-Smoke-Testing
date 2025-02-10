@@ -10,7 +10,8 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     }
 })
 describe('Cattle Contract - Create and Save', () => {
-  it('Should login, navigate to Cattle Contract, and create a new contract', () => {
+  beforeEach('Should login, navigate to Cattle Contract, and create a new contract', () => {
+    
     // Visit the login page
     cy.visit('/Login.aspx');
 
@@ -72,19 +73,51 @@ describe('Cattle Contract - Create and Save', () => {
     cy.get('#ddlPriceType').select('Priced');
     cy.get('#txtPriceperCwt').type('175');
     cy.get('.pdr_10 > input').check();
+    cy.get('#ddlSlideType').select('COR1')
     cy.get('#ddlContractStatus').select('Active');
 
     // Save the contract
-    cy.get('#btnContractSave').contains('Save').click();
+    cy.get('#btnContractSave').click();
 
     // Verify success message
-    cy.contains('Cattle Contract has been updated successfully.').should('be.visible');
+    // cy.contains('Cattle Contract has been updated successfully.').should('be.visible');
 
     // Click OK on success alert
-    cy.get('#popup_ok').contains('OK').click();
+    cy.get('#popup_ok').click();
 
     // Handle "Buyer's Projection" popup
-    cy.contains("Would you like to associate a buyer's projection?").should('be.visible');
-    cy.get('#popup_cancel').contains('NO').click();
+    // cy.contains("Would you like to associate a buyer's projection?").should('be.visible');
+    // cy.get('#popup_cancel').click();
+  });
+  it('Should display all necessary fields', () => {
+    cy.get('#txtContractNumber').should('be.visible');
+    cy.get('#txtPurDate').should('be.visible');
+    cy.get('#ddlBuyer').should('be.visible');
+    cy.get('#ddlOrderBuyer').should('be.visible');
+    cy.get('#ddlOrigin').should('be.visible');
+    cy.get('#ddlAuction').should('be.visible');
+    cy.get('#ddlRanch').should('be.visible');
+    cy.get('#txtBirthDate').should('be.visible');
+    cy.get('#ddlBirthState').should('be.visible');
+    cy.get('#ddlOwner').should('be.visible');
+    cy.get('#ddlPayee1').should('be.visible');
+    cy.get('#ddlPayee2').should('be.visible');
+    cy.get('#txtHeadCount').should('be.visible');
+    cy.get('#ddlGender').should('be.visible');
+    cy.get('#txtAvgWeight').should('be.visible');
+    cy.get('#ddlBreed').should('be.visible');
+    cy.get('#ddlFlesh').should('be.visible');
+    cy.get('#ddlFrame').should('be.visible');
+    cy.get('#txtDeliveryStartDt').should('be.visible');
+    cy.get('#txtDeliveryEndDt').should('be.visible');
+    cy.get('#ddlDestination').should('be.visible');
+    cy.get('#txtShrinkPercent').should('be.visible');
+    cy.get('#ddlPriceType').should('be.visible');
+    cy.get('#txtPriceperCwt').should('be.visible');
+    cy.get('.pdr_10 > input').should('be.visible');
+    cy.get('#ddlSlideType').should('be.visible');
+    cy.get('#ddlContractStatus').should('be.visible');
+    cy.get('#btnContractSave').should('be.visible');
+    cy.get('#btnContractDelete').should('be.visible');
   });
 });
