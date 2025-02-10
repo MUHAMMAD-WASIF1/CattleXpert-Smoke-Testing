@@ -116,8 +116,10 @@ describe('Cattle Contract - Create and Save', () => {
     cy.get('#txtPriceperCwt').should('be.visible');
     cy.get('.pdr_10 > input').should('be.visible');
     cy.get('#ddlSlideType').should('be.visible');
+
     cy.get('#ddlContractStatus').should('be.visible');
     cy.get('#btnContractSave').should('be.visible');
     cy.get('#btnContractDelete').should('be.visible');
+    // test
   });
 });
