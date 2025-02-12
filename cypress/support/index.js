@@ -1,4 +1,5 @@
 require('cypress-plugin-tab')
+Cypress.Server.defaults({ animations: false });
 // Cypress.on('uncaught:exception', (err, runnable) => {
 //     // returning false here prevents Cypress from
 //     // failing the test

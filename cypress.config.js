@@ -18,3 +18,4 @@ module.exports = defineConfig({
 // npm run cypress:run:chrome
 // jacksonbeta-JKS3
 // jheadstr-JKS4
+// npx cypress run --browser chrome
