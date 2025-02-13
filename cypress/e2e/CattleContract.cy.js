@@ -1,3 +1,4 @@
+import { beforeEach } from 'mocha'
 import example from '../fixtures/example.json'
 Cypress.on('uncaught:exception', (err, runnable) => {
   if (err.message.includes('$ is not defined')) {
@@ -41,8 +42,11 @@ describe('Cattle Contract - Create and Save', () => {
     // Ensure user is on Cattle Contract page
     cy.url().should('include', 'CattleContract');
 
+    // Generate a unique contract number using Date.now()
+    const contractNumber = `Test${Math.floor(Math.random() * 20)}`;
+
     // Fill out form fields
-    cy.get('#txtContractNumber').type('Testerone');
+    cy.get('#txtContractNumber').type(contractNumber);
     cy.get('#txtPurDate').type('01/08/2025');
     cy.get('#ddlBuyer').select('Kats Land & Cattle');
     cy.get('#ddlOrderBuyer').select('Kats Land & Cattle');
@@ -87,7 +91,7 @@ describe('Cattle Contract - Create and Save', () => {
 
     // Handle "Buyer's Projection" popup
     // cy.contains("Would you like to associate a buyer's projection?").should('be.visible');
-    // cy.get('#popup_cancel').click();
+    cy.get('#popup_cancel').click();
   });
   it('Should display all necessary fields', () => {
     cy.get('#txtContractNumber').should('be.visible');
@@ -116,10 +120,8 @@ describe('Cattle Contract - Create and Save', () => {
     cy.get('#txtPriceperCwt').should('be.visible');
     cy.get('.pdr_10 > input').should('be.visible');
     cy.get('#ddlSlideType').should('be.visible');
-    // hello world
     cy.get('#ddlContractStatus').should('be.visible');
     cy.get('#btnContractSave').should('be.visible');
     cy.get('#btnContractDelete').should('be.visible');
-    // test
   });
 });
