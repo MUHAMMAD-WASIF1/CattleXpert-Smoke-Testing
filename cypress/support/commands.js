@@ -23,3 +23,24 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('Login', () => {
+    cy.visit("https://clientdemos.cattlexpert.com/Cattlexpert.UI/Login.aspx");
+    
+    // Click on username field and type 'sabeerah'
+    cy.get('#txtUserName').click().type("sabeerah");
+    
+    // Click on password field and type 'sabeerah'
+    cy.get('#txtPassword').click().type("sabeerah");
+    
+    // Click the login button
+    cy.get('#btnLogin').click();
+  })
+
+  Cypress.Commands.add('dbsetup', () => {
+  // Select 'jackson_beta' from the dropdown
+  cy.get('#ddlFeedyardList').select('jacksonbeta-JKS3');
+
+  //Select connect button 
+  cy.get('#btnConnect').click();
+  })
