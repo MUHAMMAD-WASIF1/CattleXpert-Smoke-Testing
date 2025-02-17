@@ -10,7 +10,6 @@ Cypress.on('uncaught:exception', (err, runnable) => {
       return false
     }
 })
-//hello
 describe('Cattle Contract - Create and Save', () => {
   beforeEach('Should login, navigate to Cattle Contract, and create a new contract', () => {
     
