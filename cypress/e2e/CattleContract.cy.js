@@ -124,4 +124,10 @@ describe('Cattle Contract - Create and Save', () => {
     cy.get('#btnContractSave').should('be.visible');
     cy.get('#btnContractDelete').should('be.visible');
   });
+  it('Should not allow negative values in numeric fields', () => {
+    cy.get('#txtHeadCount').type('-50');
+    cy.get('#txtPriceperCwt').type('-175');
+    cy.get('#btnContractSave').click();
+    cy.contains('Invalid value').should('be.visible');
+});
 });
