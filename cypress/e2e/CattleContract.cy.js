@@ -1,15 +1,10 @@
 import { beforeEach } from 'mocha'
 import example from '../fixtures/example.json'
 Cypress.on('uncaught:exception', (err, runnable) => {
-  if (err.message.includes('$ is not defined')) {
-    return false
+  if (err.message.includes('$ is not defined') || err.message.includes('jquery_lang_js is not defined')) {
+    return false;
   }
-})
-Cypress.on('uncaught:exception', (err, runnable) => {
-    if (err.message.includes('jquery_lang_js is not defined')) {
-      return false
-    }
-})
+});
 describe('Cattle Contract - Create and Save', () => {
   beforeEach('Should login, navigate to Cattle Contract, and create a new contract', () => {
     
