@@ -7,7 +7,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
   }
 });
 describe('Cattle Contract - Create and Save', () => {
-  it('Should login, navigate to Cattle Receiving, and create a Ner Cattle Buy', () => {
+  it('Should login, navigate to Cattle Receiving, and create a New Cattle Buy', () => {
     
     // Visit the login page
     cy.visit('/Login.aspx');
@@ -80,7 +80,7 @@ describe('Cattle Contract - Create and Save', () => {
     cy.get('#lnkLotPenLookupScaleTicket').click();
     cy.get('#rbActive').click();
     cy.wait(5000)
-    cy.xpath('//*[@id="5"]/td[3]').should('be.visible').click();
+    cy.xpath('//*[@id="6"]/td[3]').should('be.visible').click();
 
     const ScaleTicket = Math.floor(1000 + Math.random() * 9000);
     cy.get('#txtCattleScaleTicketNo').type(ScaleTicket);
@@ -96,7 +96,38 @@ describe('Cattle Contract - Create and Save', () => {
     cy.get('#btnCattleScaleTicketSave').click();
     cy.get('#popup_ok').click();
     cy.get('#popup_ok').click();
+    cy.xpath('//*[@id="PenAssignment"]').click();
+    cy.get('#lnkSamePen > span').click();
 
+    const LotNumber = `Lot${Math.floor(Math.random() * 55)}`;
+    cy.get('#txtLotNumber').type(LotNumber);
+    cy.get('#btnSaveLotNumber').click();
+    cy.get('#popup_ok').click();
+    cy.get('.ddlprocessReg').select('Incoming Calf');
+    cy.get('select.ddlcust').select('2-6Wts');
+    cy.xpath('/html/body/form/section[1]/section[2]/section/section[1]/article/section[3]/div/div/div[3]/div[1]/div/div[3]/div[3]/div/table/tbody/tr[2]/td[16]/input').clear().type('100')
+    cy.xpath('/html/body/form/section[1]/section[2]/section/section[1]/article/section[3]/div/div/div[3]/div[1]/div/div[3]/div[3]/div/table/tbody/tr[2]/td[17]/input').clear().type('50000')
+    cy.xpath('/html/body/form/section[1]/section[2]/section/section[1]/article/section[3]/div/div/div[3]/div[1]/div/div[3]/div[5]/table/tbody/tr[2]/td[2]/input[1]').click();
+    cy.get('#popup_ok').click();
+    cy.xpath('/html/body/form/section[1]/section[2]/section/section[1]/article/section[3]/div/div/div[3]/div[1]/div/div[3]/div[5]/table/tbody/tr[2]/td[1]').click();
+    cy.get('#btnProcSetup').click();
+    cy.get('#chk1').click();
+    cy.get('#chk17').click();
+    cy.get('#chk18').click();
+    cy.get('#chk23').click();
+    cy.get('#chk38').click();
+    cy.get('#chk38').click();
+    cy.xpath('//*[@id="procSetup_popup"]/li[4]/ul/li/fieldset/table/tbody/tr/td[1]/select').select('Rev G (120 Days)')
+    cy.get('#txtImplRemarks').type('Automate')
+    cy.get('.frt > #btnSave').click();
+    cy.get('#popup_ok').click();
+    cy.get('#btnProcSetupOK').click();
+    cy.get('#lnkProcSummary').click();
+    cy.get('#btnDefaultProcessing').click();
+    cy.get('#popup_ok').click();
+    cy.get('#btnProcessSummaryOK').click();
+    cy.get('#btnMove').click();
+    cy.get('#popup_ok').click();
+    cy.get('#popup_ok').click();
   });
-  
 });
