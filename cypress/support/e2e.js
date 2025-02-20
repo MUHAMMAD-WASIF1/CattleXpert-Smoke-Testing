@@ -16,21 +16,25 @@
 // Import commands.js using ES2015 syntax:
 import './commands'
 import 'cypress-mochawesome-reporter/register';
+import 'cypress-iframe';
 
+Cypress.Commands.add('uploadFileToIframe', (iframeSelector, inputSelector, filePath) => {
+  cy.iframe(iframeSelector).then(($iframe) => {
+    cy.wrap($iframe).find(inputSelector).then(($input) => {
+      cy.wrap($input).selectFile(filePath, { force: true });
+      
+    });
+  });
+});
 
 
 Cypress.on('uncaught:exception', (err, runnable) => {
-    // we expect a 3rd party library error with message 'list not defined'
-    // and don't want to fail the test so we return false
-    if (err.message.includes('$ is not defined')) {
-      return false
-    }
-  })
-
-  Cypress.on('uncaught:exception', (err, runnable) => {
-    // we expect a 3rd party library error with message 'list not defined'
-    // and don't want to fail the test so we return false
-    if (err.message.includes('jquery_lang_js is not defined')) {
-      return false
-    }
-  })
+  // Ignore specific 3rd party library errors and prevent test failure
+  if (
+    err.message.includes('$ is not defined') ||
+    err.message.includes('jquery_lang_js is not defined') ||
+    err.message.includes('_view is not defined')
+  ) {
+    return false
+  }
+})

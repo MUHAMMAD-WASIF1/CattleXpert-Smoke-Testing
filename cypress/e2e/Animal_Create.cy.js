@@ -1,4 +1,4 @@
-import { getRandomCharacter, login } from '../support/function.js';
+import { getRandomString, login } from '../support/function.js';
 
 describe('LOGIN TO CATTLEXPERT WEBSITE', () => {
 
@@ -8,7 +8,7 @@ describe('LOGIN TO CATTLEXPERT WEBSITE', () => {
   })
 })
 
-describe('Verify all UI elements are visible and interactable)', () => {
+describe('Verify all UI elements of "Animal Create" are visible and interactable', () => {
 
   it('NAVIGATION TO HEALTH > Animal Create', () => {
     //Animal Create
@@ -134,14 +134,14 @@ describe('Multiple Animal Records Creation And Verification)', () => {
       .check().should('be.checked');
 
 
-    // Generate a random character
-    const randomChar = getRandomCharacter();
-    // Log the random character (optional)
-    cy.log(`Random Character: ${randomChar}`);
+    // Generate a random String
+    const randomString = getRandomString(2);
+    // Log the random String 
+    cy.log(`Random String: ${randomString}`);
 
     cy.get('#txtUsePrefix')
       .should('be.visible').click()
-      .type(randomChar + '-WASAUTO-');
+      .type(randomString + '-WASAUT-');
 
     // Enter text in the "Begin With" field.
     cy.get('#txtBeginWith')
@@ -167,7 +167,7 @@ describe('Multiple Animal Records Creation And Verification)', () => {
     cy.get('#popup_message > .productGridView > #gbox_productGridView > #gview_productGridView > .ui-jqgrid-bdiv > [style="position:relative;"] > #productGridView')
       .should('be.visible')
       .within(() => {
-        // Each record has a common class name ".ui-widget-content jqgrow ui-row-ltr"
+        // Each record has a common class name ".Green"
         cy.get('.Green').should('have.length', 10);
 
         // Verify that each record displays status ANIMAL CREATED.
@@ -242,18 +242,18 @@ describe('INDIVIDUAL Animal Record Creation And Verification', () => {
       .check().should('be.checked');
     cy.get('#secIndividualAnimal > .inlblk').should('be.visible')
 
-    // Generate a random character
-    const randomChar = getRandomCharacter();
-    // Log the random character (optional)
-    cy.log(`Random Character: ${randomChar}`);
+      // Generate a random string
+      const randomString = getRandomString(2);
+      // Log the random string
+      cy.log(`Random String: ${randomString}`);
 
     cy.get('#txtAnimalNo')
       .should('be.visible').click()
-      .type('WASAUTO-' + randomChar);
+      .type('WASAUT-' + randomString);
 
     cy.get('#txtVisualTagId')
       .should('be.visible').click()
-      .type('vWASAUTO-' + randomChar);
+      .type('vWASAUT-' + randomString);
 
     cy.get('#txtWeight')
       .should('be.visible').click().clear()
@@ -261,7 +261,7 @@ describe('INDIVIDUAL Animal Record Creation And Verification', () => {
 
     cy.get('#txtCowCalfId')
       .should('be.visible').click()
-      .type('cWASAUTO-' + randomChar);
+      .type('cWASAUT-' + randomString);
 
     // Click the "Create Animal Record" button.
     cy.get('#btnCreate')
