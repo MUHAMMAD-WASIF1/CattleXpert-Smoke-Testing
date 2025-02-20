@@ -1,3 +1,5 @@
+import 'cypress-xpath';
+import dayjs from 'dayjs';
 import example from '../fixtures/example.json'
 Cypress.on('uncaught:exception', (err, runnable) => {
   if (err.message.includes('$ is not defined') || err.message.includes('jquery_lang_js is not defined')) {
@@ -34,7 +36,7 @@ describe('Cattle Contract - Create and Save', () => {
     cy.get('#btnLogin').click();
 
     // Select the db from the Feedyard dropdown
-    cy.get('#ddlFeedyardList').select('jacksonbeta-JKS3');
+    cy.get('#ddlFeedyardList').select('jacksonsandbox-JKS2');
 
     // Click the connect button
     cy.get('#btnConnect').click();
@@ -46,13 +48,16 @@ describe('Cattle Contract - Create and Save', () => {
     // Ensure user is on Cattle Contract page
     cy.url().should('include', 'CattleReceiving');
     cy.get('#lnkNewCattleBuy > span').click();
-    cy.get('#ddlCattleContract').select('Am03');
+    cy.get('#ddlCattleContract').select('01');
+
+    const currentDate = dayjs().format('MM/DD/YYYY hh:mm:ss A');
+    cy.get('#txtPurchaseDate').type(currentDate);
     cy.get('#txtPurchaseDate').type('01/08/2025');
     cy.get('#txtPurchaseHead').should('be.visible').click().clear().type('100')
     cy.get('#txtTotalPayWeight').should('be.visible').click().clear().type('50000')
     cy.get('#txtAvgPayWeight').should('be.visible');
     cy.get('#ddlGender').select('Steer-Male');
-    cy.get('#ddlOwner').select('Hassan Haroon');
+    cy.get('#ddlOwner').select('testing');
     cy.get('#txtNotes').type('Automation');
     cy.get('#divCattleCharacteristics > .pd_5 > .icon').click();
     cy.get('#ddlBuyer').select('JKS2');
@@ -74,7 +79,24 @@ describe('Cattle Contract - Create and Save', () => {
     cy.get('#ScaleTicket > .magenta > span').click();
     cy.get('#lnkLotPenLookupScaleTicket').click();
     cy.get('#rbActive').click();
-    cy.contains('J018').should('be.visible').click();
-    cy.get('#txtCattleScaleTicketNo').click();
+    cy.wait(5000)
+    cy.xpath('//*[@id="5"]/td[3]').should('be.visible').click();
+
+    const ScaleTicket = Math.floor(1000 + Math.random() * 9000);
+    cy.get('#txtCattleScaleTicketNo').type(ScaleTicket);
+
+    const currentDate1 = dayjs().format('MM/DD/YYYY hh:mm:ss A'); // Format should match the input field
+    // Clear the date field and type the current date
+    cy.get('#txtCattleScaleTicketDate').type(currentDate1);
+    cy.get('#txtCattleScaleTicketNoOfHeads').should('be.visible').click().clear().type('100')
+    cy.get('#txtCattleScaleTicketTotalOffTruckWght').should('be.visible').click().clear().type('50000')
+    cy.get('#ddlCattleScaleTicketCarrier').select('M&R');
+    cy.get('#txtCattleScaleTicketTruckNo').type('Null');
+    cy.get('#txtCattleScaleTicketNotes').type('Automate ScaleTicket');
+    cy.get('#btnCattleScaleTicketSave').click();
+    cy.get('#popup_ok').click();
+    cy.get('#popup_ok').click();
+
   });
+  
 });
