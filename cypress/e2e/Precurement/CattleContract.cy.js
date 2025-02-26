@@ -1,6 +1,6 @@
 import { beforeEach } from 'mocha'
 import dayjs from 'dayjs';
-import example from '../fixtures/example.json'
+import example from '../../fixtures/example.json'
 Cypress.on('uncaught:exception', (err, runnable) => {
   if (err.message.includes('$ is not defined') || err.message.includes('jquery_lang_js is not defined')) {
     return false;
