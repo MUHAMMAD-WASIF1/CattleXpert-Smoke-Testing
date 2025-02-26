@@ -129,8 +129,8 @@ describe('Should login, create a cattle contract and navigate to buyer projectio
     cy.get('#txtMisChargeHead').type('10');
     // cy.wait(3000)
     cy.get('#btnSave').click();
-    cy.wait(3000)
-    cy.get('#popup_ok').click();
+    // cy.wait(3000)
+    // cy.get('#popup_ok').click();
     // cy.xpath('//*[@id="btnSave"]').click();
     // cy.get('#popup_ok').click();
   });

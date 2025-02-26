@@ -8,38 +8,6 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 });
 describe('Should login, navigate to Cattle Contract,"', () => {
   it('Verify a cattle contract is created successfully and shows a Contract Created message after saving.', () => {
-    
-    // Visit the login page
-    cy.visit('/Login.aspx');
-
-   // Clear cookies, localStorage, and sessionStorage
-   cy.clearCookies();
-   cy.clearLocalStorage();
-   cy.window().then((win) => {
-     win.sessionStorage.clear();
-   });
-   
-   // Reload the page to reset state
-   cy.reload();
-
-  // Select Public User
-  cy.get('#rbLoginType_0').check();
-  
-  // Fetch credentials from fixture file
-  const { User, Password } = example.CXUser[0];
-
-  // Enter username and password
-  cy.get('#txtUserName').type(User);
-  cy.get('#txtPassword').type(Password);
-
-  // Click the login button
-  cy.get('#btnLogin').click();
-
-  // Select the db from the Feedyard dropdown
-  cy.get('#ddlFeedyardList').select('jacksonsandbox-JKS2');
-
-  // Click the connect button
-  cy.get('#btnConnect').click();
 
     // Hover over the Procurement menu and navigate to Cattle Contract
     cy.contains('Procurement').trigger('mouseover');
@@ -118,10 +86,10 @@ describe('Should login, navigate to Cattle Contract,"', () => {
     cy.get('#txtContractNumber').type(contractNumber);
     const randomDays = Math.floor(Math.random() * 30) + 60; 
   // Subtract random days from today’s date
-  const randomDate = dayjs().subtract(randomDays, 'day').format('MM/DD/YYYY');
+    const randomDate = dayjs().subtract(randomDays, 'day').format('MM/DD/YYYY');
 
   // Enter the random date in the purchase date field
-  cy.get('#txtPurDate').clear().type(randomDate);
+    cy.get('#txtPurDate').clear().type(randomDate);
     cy.get('#ddlBuyer').select('John Walker');
     cy.get('#ddlOrderBuyer').select('John Walker');
     cy.get('#ddlOrigin').select('Nebraska Ranch');
