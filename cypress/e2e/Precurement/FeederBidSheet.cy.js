@@ -42,7 +42,7 @@ describe('Creating Feeder Bit Sheet', () => {
     cy.get('#btnConnect').click();
   });
 
-  it('Should login, navigate to Cattle Receiving, and create a New Cattle Buy', () => {
+  it('Should login, navigate to Feeder Bit Sheet and and Create Bit sheet', () => {
     // Hover over the Procurement menu and navigate to Cattle Contract
     cy.contains('Procurement').trigger('mouseover');
     cy.contains('Feeder Bid Sheet').click();
@@ -102,8 +102,6 @@ describe('Creating Feeder Bit Sheet', () => {
       cy.wait(5000)
       // Navigate back to the Feeder Bid Sheet page
       cy.go('back'); // Goes back to previous page (Feeder Bid Sheet)
-
-    // cy.get('#btnCreateBidSheet').click();
   });
 });
 
