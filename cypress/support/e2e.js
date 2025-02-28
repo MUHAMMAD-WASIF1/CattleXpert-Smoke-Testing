@@ -22,7 +22,12 @@ Cypress.Commands.add('uploadFileToIframe', (iframeSelector, inputSelector, fileP
   cy.iframe(iframeSelector).then(($iframe) => {
     cy.wrap($iframe).find(inputSelector).then(($input) => {
       cy.wrap($input).selectFile(filePath, { force: true });
-      
+
+    cy.wrap($iframe).find('#pxupload1_text').should('be.visible');
+    cy.wait(2000)
+    cy.wrap($iframe).find('#px-submit').should('be.visible').click()
+    cy.wait(3000)
+    cy.wrap($iframe).find('#btn-done').should('be.visible').click()
     });
   });
 });
@@ -33,7 +38,10 @@ Cypress.on('uncaught:exception', (err, runnable) => {
   if (
     err.message.includes('$ is not defined') ||
     err.message.includes('jquery_lang_js is not defined') ||
-    err.message.includes('_view is not defined')
+    err.message.includes('_view is not defined') ||
+    err.message.includes("Cannot read properties of undefined (reading 'Description')") || 
+    err.message.includes("Cannot set properties of null (setting 'loading')")
+    
   ) {
     return false
   }

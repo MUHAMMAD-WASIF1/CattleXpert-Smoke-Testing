@@ -106,17 +106,6 @@ describe('Add New Breeding Event and verify', () => {
         cy.get('#AnimalLiveStatus').should('be.visible').and('have.text', 'Active')
         cy.contains('#Breeding > a', 'Breeding').should('be.visible').click()
 
-        //         cy.get('#productAnimalDetailBreedingGridView')
-        //   .should('be.visible')
-        //   .within(() => {
-        //     cy.get('tr[role="row"]') // Select all rows within the table body
-        //       .first() // Get the *first* row
-        //       .within(() => {
-        //         cy.get('td:nth-child(8)') // 8th cell (index starts at 1) - NOTES column
-        //           .should('have', '92');
-        //       });
-        //   });
-
         cy.get('[aria-describedby="productAnimalDetailBreedingGridView_NOTES"]').and('contain', randomNumbers)
 
     })

@@ -95,7 +95,7 @@ describe('Navigating to Animal Weight Tab and Add Weight', () => {
             .and('contain', randomNumbers).click()
         cy.get('#lnkDeleteWeight').click()
         cy.get('#popup_ok').click()
-        // cy.contains('#popup_message', 'Animal Weight has been deleted successfully.  ')
+        cy.contains('#popup_message', 'Animal Weight has been deleted successfully')
 
     })
 })
