@@ -25,14 +25,3 @@ export function login() {
   cy.get('#btnConnect').click();
 }
 
-//RANDOM STRING
-export function getRandomString(length) {
-  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  return Array.from({ length }, () => characters[Math.floor(Math.random() * characters.length)]).join('');
-}
-
-//RANDOM NUMBERS
-export function getRandomNumbers(length) {
-  const characters = '123456789';
-  return Array.from({ length }, () => characters[Math.floor(Math.random() * characters.length)]).join('');
-}
