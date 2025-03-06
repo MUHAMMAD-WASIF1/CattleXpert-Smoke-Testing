@@ -1,27 +1,11 @@
-import login from '../../fixtures/profile.json'
+import { login } from '../../support/function.js';
 
 
 describe('CATTLEXPERT COMPLETE "SYSTEM SETUP" SMOKE TESTING', () => {
 
 it('00 LOGIN TO CATTLEXPERT WEBSITE', () => {        
-// LOGIN
-    cy.visit('/');
-
-    // Clear cookies, localStorage, and sessionStorage
-    cy.clearCookies();
-    cy.clearLocalStorage();
-    cy.window().then((win) => {
-      win.sessionStorage.clear();
-    });
-    
-    // Reload the page to reset state
-    cy.reload();
-
-    cy.get('#txtUserName').type(login.name)
-    cy.get('#txtPassword').type(login.pass)
-    cy.get('#btnLogin').click()
-    cy.get('#ddlFeedyardList').select(login.database)
-    cy.get('#btnConnect').click()
+    // LOGIN
+    login();
     })
 
 it('01 SYSTEM SETUP > CATTLE Smoke Testing', () => {     
