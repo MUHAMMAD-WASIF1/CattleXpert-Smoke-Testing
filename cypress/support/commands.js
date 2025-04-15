@@ -23,3 +23,10 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+// common.js
+module.exports = {
+  exampleFunction: () => {
+    console.log("This is a placeholder for common.js");
+  },
+};
