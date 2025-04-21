@@ -21,8 +21,27 @@ describe("Invoice Processing Automation", () => {
     // Type "All" into the Lot Number input field
     cy.get("#txtLotNumber").should("exist").clear().type("All{enter}");
 
-    // Enter the date range for the invoice
-    cy.get("#txtToDate").should("exist").clear().type("11/30/2024");
+    // Retrieve the "From Date" and calculate the "To Date" as one day ahead
+    cy.get("#txtFromDate")
+      .should("exist")
+      .invoke("val")
+      .then((fromDate) => {
+        // Parse the "From Date" and add one day
+        const fromDateObj = new Date(fromDate);
+        fromDateObj.setDate(fromDateObj.getDate() + 1);
+
+        // Format the "To Date" as MM/DD/YYYY
+        const toDate = fromDateObj
+          .toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit",
+          })
+          .replace(/\//g, "/");
+
+        // Set the "To Date" field
+        cy.get("#txtToDate").should("exist").clear().type(toDate);
+      });
 
     // Click on the Create Invoice button
     cy.get("#btnCreate").should("exist").click();
