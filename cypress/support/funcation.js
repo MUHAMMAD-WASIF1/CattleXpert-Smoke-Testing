@@ -20,3 +20,24 @@ export function login() {
   // Verify successful login by checking for a specific element on the dashboard
   cy.get('#fenster-fence', { timeout: 10000 }).should('be.visible');
 }
+export function login_headstrom() {
+  // Visit the base URL
+  cy.visit('/');
+  // Clear cookies, localStorage, and sessionStorage
+  cy.clearCookies();
+  cy.clearLocalStorage();
+  cy.window().then((win) => {
+    win.sessionStorage.clear();
+  });
+  // Reload the page to reset state
+  cy.reload();
+  // Perform the login steps
+  cy.get('#txtUserName').type(user.name1);
+  cy.get('#txtPassword').type(user.pass1);
+  cy.get('#btnLogin').click();
+  // Wait for the dropdown to be visible and select the feedyard
+  cy.get('#ddlFeedyardList', { timeout: 10000 }).should('be.visible').select(user.database1);
+  cy.get('#btnConnect').click();
+  // Verify successful login by checking for a specific element on the dashboard
+  cy.get('#fenster-fence', { timeout: 10000 }).should('be.visible');
+}
