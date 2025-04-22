@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "cypress:run:chrome": "cypress run --browser chrome --headed"
+    "cypress:open": "npx cypress open --e2e --browser chrome",
+    "cypress:run": "npx cypress run --browser chrome",
+    "test": "npx cypress run && node sendReport.js",
+    "invoice": "cypress run --spec 'cypress/e2e/invoice/**/*.cy.js' --browser chrome --headed"
   },
   "keywords": [],
   "author": "",
@@ -15,11 +17,13 @@
     "mochawesome-merge": "^5.0.0"
   },
   "devDependencies": {
-    "cypress": "^14.3.0",
+    "cypress": "^14.3.1",
     "cypress-iframe": "^1.0.1",
     "cypress-mochawesome-reporter": "^3.8.2",
     "cypress-plugin-tab": "^1.0.5",
     "cypress-real-events": "^1.14.0",
-    "cypress-xpath": "^2.0.1"
+    "cypress-xpath": "^2.0.1",
+    "diff": "^7.0.0",
+    "mochawesome": "^7.1.3"
   }
 }

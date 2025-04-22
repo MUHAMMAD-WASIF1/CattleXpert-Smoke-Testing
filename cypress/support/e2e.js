@@ -19,16 +19,13 @@ Cypress.Commands.add('uploadFileToIframe', (iframeSelector, inputSelector, fileP
 
 
 Cypress.on('uncaught:exception', (err, runnable) => {
-  // Ignore specific 3rd party library errors and prevent test failure
   if (
     err.message.includes('$ is not defined') ||
     err.message.includes('jquery_lang_js is not defined') ||
     err.message.includes('_view is not defined') ||
     err.message.includes("Cannot read properties of undefined (reading 'Description')") || 
-    err.message.includes("Cannot set properties of null (setting 'loading')") ||
-    err.message.includes("$(...)[0].addJSONData is not a function") 
-    
+    err.message.includes("Cannot set properties of null (setting 'loading')")
   ) {
-    return false
+    return false; // Prevent test failure
   }
-})
+});

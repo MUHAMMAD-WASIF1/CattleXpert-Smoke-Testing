@@ -28,9 +28,9 @@ describe("Invoice Processing Automation", () => {
     cy.get('#optCattle').click();
     cy.wait(5000); // waits for 5 seconds
     cy.get('#btnAddRow').click({ force: true });
-    cy.xpath().click().type('10');
-    cy.xpath('//*[@id="4_CattleEquity"]').click().type('20');
-    cy.xpath('//*[@id="4_FeedMiscellaneous"]').click();
+    cy.xpath('//*[@id="5_CattleEquity"]').click().type('10');
+    cy.xpath('//*[@id="5_FeedMiscellaneous"]').click().type('20');
+    cy.xpath('//*[@id="5"]/td[1]/input[2]').click();
     cy.get('#btnSave').click();
      
 });
