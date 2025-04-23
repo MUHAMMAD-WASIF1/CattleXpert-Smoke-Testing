@@ -153,5 +153,7 @@
   "R_Dead_Medical_Reason" : "#Item_JHS179",
   "Daily_Charges" : "#Item_JHS184",
   "R_Mortality" :"#Item_JHS192",
-  "R_Listing" : "#Item_JHS320"
+  "R_Listing" : "#Item_JHS320",
+  "Daily_Report" : "#Item_JHS185",
+  "R_lotsummary" :"#Item_JHS208"
 }
