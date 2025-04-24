@@ -15,7 +15,7 @@
     "mochawesome-merge": "^5.0.0"
   },
   "devDependencies": {
-    "cypress": "^14.3.0",
+    "cypress": "^14.3.2",
     "cypress-iframe": "^1.0.1",
     "cypress-mochawesome-reporter": "^3.8.2",
     "cypress-plugin-tab": "^1.0.5",

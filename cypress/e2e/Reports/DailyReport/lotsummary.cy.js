@@ -80,12 +80,7 @@ cy.wait(2000);
     cy.contains('Selling Cost').next().should('contain', '$ 0.00');
     cy.contains('Guaranteed Cost').next().should('contain', '$ 0.00');
     cy.contains('Dead Income').next().should('contain', '$ 0.00');
+    });  
   });
-  
-  });
-
-
-
-  
-  });
+});
 

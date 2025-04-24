@@ -49,6 +49,8 @@
   "All_Jobs": "#lnkAllJobs",
   "Job_Status": "#lnkJobStatus",
   "System_Setup": "#Item_JHS48",
+  "System_Setup_Feed": "#Item_JHS76",
+  "System_Setup_Feed_RationWorksheet": "#Item_JHS89",
   "Cattle": "#Item_JHS49",
   "Breed": "#Item_JHS50",
   "Cattle_Base_Weight": "#Item_JHS52",
@@ -148,6 +150,8 @@
 
   "Reports" : "#Item_JHS44",
   "Actual_Feed" : "#Item_JHS214",
+  "Lot_Health" : "#Item_JHS296",
+  "Summary_By_Owner" : "#Item_JHS301",
   "Daily_Feed_Per_Pen_Feed_In" : "#Item_JHS215",
   "R_Animal_health" : "#Item_JHS177",
   "R_Dead_Medical_Reason" : "#Item_JHS179",
@@ -155,5 +159,7 @@
   "R_Mortality" :"#Item_JHS192",
   "R_Listing" : "#Item_JHS320",
   "Daily_Report" : "#Item_JHS185",
-  "R_lotsummary" :"#Item_JHS208"
+  "R_lotsummary" :"#Item_JHS208",
+  "Daily_Feed_Per_Pen_Feed_Out" : "#Item_JHS216",
+  "Ration_Worksheet_Report" : "#Item_JHS218"
 }
