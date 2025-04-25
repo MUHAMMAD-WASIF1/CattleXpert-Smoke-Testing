@@ -161,5 +161,7 @@
   "Daily_Report" : "#Item_JHS185",
   "R_lotsummary" :"#Item_JHS208",
   "Daily_Feed_Per_Pen_Feed_Out" : "#Item_JHS216",
-  "Ration_Worksheet_Report" : "#Item_JHS218"
+  "Ration_Worksheet_Report" : "#Item_JHS218",
+  "R_lot": "#Item_JHS201",
+  "R_customer_closeout": "#Item_JHS203"
 }

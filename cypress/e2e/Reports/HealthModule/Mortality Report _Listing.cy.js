@@ -1,7 +1,7 @@
 import { login_headstrom } from '../../../support/funcation';
 import 'cypress-xpath';
 
-describe('Verify Daily Feed Per Pen (Feed In) and Feed Status Data', () => {
+describe('Verify the Mortality Listing Report Detail', () => {
   let nav;
 
   beforeEach(() => {
@@ -10,7 +10,7 @@ describe('Verify Daily Feed Per Pen (Feed In) and Feed Status Data', () => {
     });
   });
 
-  it('Verify data between Daily Feed Per Pen (Feed In) and Feed Status', () => {
+  it('Verify the Mortality Listing Report Detail', () => {
     login_headstrom();
 
     // Navigate to "Daily Feed Per Pen (Feed In)" report
@@ -77,6 +77,6 @@ describe('Verify Daily Feed Per Pen (Feed In) and Feed Status Data', () => {
  //Navigate to the Health in Animal Detail screen      
  cy.get('#Health > a').click();
  //Verify the Breather data in the Health screen
- cy.get('#txtHDeadReason').click();
+ cy.get('#txtHDeadReason').click('be.visible');
  });
 });
