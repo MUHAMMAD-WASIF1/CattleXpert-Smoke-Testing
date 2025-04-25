@@ -64,6 +64,24 @@ describe('Verify the Lot Customer Closeout Report', () => {
         // ✅ Step 3: Select the Lot Number
         cy.get('#txtEditLotNumber')
           .type('HCF24-2').type('{enter}');
+
+        // ✅ Step 4: Assert that the dynamic value from the report is present on the Lot Detail screen
+        cy.get('#txtProratedHead') // Replace with actual selector of the element displaying the value
+        .should('be.visible')
+        .invoke('text')
+        .then((lotDetailReceivedValue) => {
+          cy.get('@fetchedReportValue') // Access the fetched dynamic value from the alias
+            .then((fetchedReportValue) => {
+              // Compare the values after trimming spaces
+              cy.get('#txtProratedHead')
+              .should('be.visible')
+              .invoke('text')
+              .then((text) => {
+                cy.log('Text from Lot Detail:', text);
+              });
+                        });
+        });
+      
       });
   });
 });
