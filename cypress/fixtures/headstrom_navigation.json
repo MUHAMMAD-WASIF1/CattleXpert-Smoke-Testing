@@ -150,6 +150,8 @@
   "Security_Setup": "#Item_JHS133",
 
   "Reports" : "#Item_JHS44",
+  "Daily_Reports": "#Item_JHS206",
+  "Daily_Report_Processing_Charges": "#Item_JHS209",
   "Actual_Feed" : "#Item_JHS214",
   "Lot_Health" : "#Item_JHS296",
   "Summary_By_Owner" : "#Item_JHS301",
