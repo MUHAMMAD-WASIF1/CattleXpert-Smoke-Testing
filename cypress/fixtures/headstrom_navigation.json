@@ -136,6 +136,7 @@
   "User": "#Item_JHS135",
   "Workstation_Setup": "#Item_JHS136",
   "Health": "#Item_JHS31",
+  "Health_Animal_Deatail": "#Item_JHS33",
   "Health_Physical_Inventory": "#Item_JHS293",
   "SS_Feed": "#Item_JHS76",
   "SS_Health": "Item_JHS92",
@@ -164,5 +165,8 @@
   "Ration_Worksheet_Report" : "#Item_JHS218",
   "R_invoice" :"#Item_JHS221",
   "R_InvoiceStatement" :"#Item_JHS316",
-  "R_Invoice_ChargeSummary_Lot" :"#Item_JHS222"
+  "R_Invoice_ChargeSummary_Lot" :"#Item_JHS222",
+  "R_lot" :"#Item_JHS201",
+  "R_Lot_DetailListing" :"#Item_JHS241",
+   "R_AnimalHealth_HospitalActivity" : "#Item_JHS186" 
 }
