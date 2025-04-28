@@ -163,5 +163,6 @@
   "Daily_Feed_Per_Pen_Feed_Out" : "#Item_JHS216",
   "Ration_Worksheet_Report" : "#Item_JHS218",
   "R_lot": "#Item_JHS201",
-  "R_customer_closeout": "#Item_JHS203"
+  "R_customer_closeout": "#Item_JHS203",
+  "R_Summary_by_buyer_Animal": "Item_JHS303"
 }
