@@ -49,6 +49,8 @@
   "All_Jobs": "#lnkAllJobs",
   "Job_Status": "#lnkJobStatus",
   "System_Setup": "#Item_JHS48",
+  "System_Setup_Health": "#Item_JHS92",
+  "System_Setup_Health_PredefinedTreatments": "#Item_JHS101",
   "System_Setup_Feed": "#Item_JHS76",
   "System_Setup_Feed_RationWorksheet": "#Item_JHS89",
   "Cattle": "#Item_JHS49",
@@ -154,6 +156,7 @@
   "Daily_Report_Processing_Charges": "#Item_JHS209",
   "Actual_Feed" : "#Item_JHS214",
   "Lot_Health" : "#Item_JHS296",
+  "Reports_Feeding": "#Item_JHS324",
   "Summary_By_Owner" : "#Item_JHS301",
   "Daily_Feed_Per_Pen_Feed_In" : "#Item_JHS215",
   "R_Animal_health" : "#Item_JHS177",
@@ -170,5 +173,8 @@
   "R_Invoice_ChargeSummary_Lot" :"#Item_JHS222",
   "R_lot" :"#Item_JHS201",
   "R_Lot_DetailListing" :"#Item_JHS241",
-   "R_AnimalHealth_HospitalActivity" : "#Item_JHS186" 
+   "R_AnimalHealth_HospitalActivity" : "#Item_JHS186",
+  "R_AnimalHealth_PredefinedTreatment" : "#Item_JHS183",
+  "R_Feeding_DailyFeedCall" : "#Item_JHS327"
+
 }

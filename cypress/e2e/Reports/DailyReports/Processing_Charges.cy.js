@@ -1,7 +1,7 @@
 import { login_headstrom } from "../../../support/funcation";
 import "cypress-xpath";
 
-describe("Verify Daily>Processing Charges report data", () => {
+describe("LOGIN TO CATTLEXPERT WEBSITE", () => {
   let nav;
   let processingSummaryData = {}; // Declare and initialize processingSummaryData
 
