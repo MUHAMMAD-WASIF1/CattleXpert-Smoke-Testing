@@ -33,17 +33,15 @@ describe("LOGIN TO CATTLEXPERT WEBSITE", () => {
     cy.wait(3000);
 
      // Verify the key headers of the report
-     const expectedHeaders = [
-        "PEN",
-        "Head Count",
-        "Ration",
-        "Actual Call",
-        "Plan Call",
-        "Lbs/HD",
-        "Fed",
-        "Var/Lbs/HD"
-      ];
-
+     cy.contains('PEN').should('exist');
+     cy.contains(/Head\s*Count/).should('exist');
+     cy.contains('Ration').should('exist');
+     cy.contains(/Actual\s*Call/).should('exist');
+     cy.contains(/Plan\s*Call/).should('exist');
+     cy.contains(/Lbs\/HD/).should('exist');
+     cy.contains('Fed').should('exist');
+     cy.contains(/Var\/Lbs\/HD/).should('exist');
+     
      // Store expected values
     const expectedData = {
         PEN: '0002',

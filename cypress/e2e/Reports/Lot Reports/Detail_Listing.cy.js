@@ -32,13 +32,21 @@ cy.get('#ctl00_ctl00_ContentPlaceHolder_RightSectionPlaceHolder_ReportViewer1_ct
 cy.wait(5000); // Adjust the wait time if necessary
 
  //Verify the key headers of the report 
- const expectedHeaders = [
-    "Date", "Type", "From Lot",
-    "Head In", "Head Out", "To Lot",
-    "Owner", "Lot Class", "Origin",
-    "Pay Weight", "Off Truck Weight",
-    "Cattle", "Freight", "Comission"
-  ]; 
+ cy.contains('Date').should('exist');
+cy.contains('Type').should('exist');
+cy.contains(/From\s*Lot/).should('exist');
+cy.contains(/Head\s*In/).should('exist');
+cy.contains(/Head\s*Out/).should('exist');
+cy.contains(/To\s*Lot/).should('exist');
+cy.contains('Owner').should('exist');
+cy.contains(/Lot\s*Class/).should('exist');
+cy.contains('Origin').should('exist');
+cy.contains(/Pay\s*Weight/).should('exist');
+cy.contains(/Off\s*Truck\s*Weight/).should('exist');
+cy.contains('Cattle').should('exist');
+cy.contains('Freight').should('exist');
+cy.contains(/Comission/).should('exist'); // Double check spelling if it's actually "Commission"
+
 
   // Store expected values
   const expectedData = {

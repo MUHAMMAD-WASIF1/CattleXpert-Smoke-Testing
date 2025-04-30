@@ -36,20 +36,18 @@ describe("Verify  Hospital Activity Report", () => {
     cy.wait(3000);
 
     //Verify the key headers of the report
-    const expectedHeaders = [
-      "Animal",
-      "From Pen",
-      "ToPen",
-      "Home Pen",
-      "Lot",
-      "Owner",
-      "DOF",
-      "Treatment",
-      "Temp",
-      "Technician",
-      "Clear Week",
-      "Rider",
-    ];
+    cy.contains("Animal").should("exist");
+    cy.contains(/From\s*Pen/).should("exist");
+    cy.contains(/To\s*Pen/).should("exist");
+    cy.contains(/Home\s*Pen/).should("exist");
+    cy.contains("Lot").should("exist");
+    cy.contains("Owner").should("exist");
+    cy.contains("DOF").should("exist");
+    cy.contains("Treatment").should("exist");
+    cy.contains("Temp").should("exist");
+    cy.contains("Technician").should("exist");
+    cy.contains(/Clear\s*Week/).should("exist");
+    cy.contains("Rider").should("exist");
 
     // Store expected values
     const expectedData = {
@@ -67,10 +65,9 @@ describe("Verify  Hospital Activity Report", () => {
     cy.get("#txtPayWeight").click();
 
     //Verify the data of the report in the Animal Details screen
- 
+
     cy.contains(expectedData.From_Pen).should("exist");
     cy.contains(expectedData.To_Pen).should("exist");
     cy.contains(expectedData.Lot).should("exist");
-    
   });
 });

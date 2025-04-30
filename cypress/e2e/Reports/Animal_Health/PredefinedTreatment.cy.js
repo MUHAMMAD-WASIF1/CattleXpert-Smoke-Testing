@@ -2,7 +2,7 @@ import { login_headstrom } from "../../../support/funcation";
 import "cypress-xpath";
 
 describe("LOGIN TO CATTLEXPERT WEBSITE", () => {
-  let nav;  
+  let nav;
 
   beforeEach(() => {
     cy.fixture("headstrom_navigation").then((headstrom_navigation) => {
@@ -20,19 +20,17 @@ describe("LOGIN TO CATTLEXPERT WEBSITE", () => {
     cy.wait(5000);
 
     // Verify the key headers of the report
-    const expectedHeaders = [
-      "Treatment",
-      "Withdrawal Days",
-      "Withdrawal Weeks",
-      "Diagnosis",
-      "Day Number",
-      "Seq Num",
-      "Description",
-      "Qty",
-      "UOM",
-      "CWT Flag",
-      "Charge Type",
-    ];
+    cy.contains("Treatment").should("exist");
+    cy.contains(/Withdrawal\s*Days/).should("exist");
+    cy.contains(/Withdrawal\s*Weeks/).should("exist");
+    cy.contains("Diagnosis").should("exist");
+    cy.contains(/Day\s*Number/).should("exist");
+    cy.contains(/Seq\s*Num/).should("exist");
+    cy.contains("Description").should("exist");
+    cy.contains("Qty").should("exist");
+    cy.contains("UOM").should("exist");
+    cy.contains(/CWT\s*Flag/).should("exist");
+    cy.contains(/Charge\s*Type/).should("exist");
 
     // Store expected values
     const expectedData = {
@@ -59,6 +57,5 @@ describe("LOGIN TO CATTLEXPERT WEBSITE", () => {
     cy.contains(expectedData.Withdrawal_Days).should("exist");
     cy.contains(expectedData.Qty).should("exist");
     cy.contains(expectedData.UOM).should("exist");
-
   });
 });
