@@ -49,8 +49,11 @@
   "All_Jobs": "#lnkAllJobs",
   "Job_Status": "#lnkJobStatus",
   "System_Setup": "#Item_JHS48",
+  "System_Setup_Health": "#Item_JHS92",
+  "System_Setup_Health_PredefinedTreatments": "#Item_JHS101",
   "System_Setup_Feed": "#Item_JHS76",
   "System_Setup_Feed_RationWorksheet": "#Item_JHS89",
+  "System_Setup_Commodity_Cost": "#Item_JHS79",
   "Cattle": "#Item_JHS49",
   "Breed": "#Item_JHS50",
   "Cattle_Base_Weight": "#Item_JHS52",
@@ -136,6 +139,7 @@
   "User": "#Item_JHS135",
   "Workstation_Setup": "#Item_JHS136",
   "Health": "#Item_JHS31",
+  "Health_Animal_Deatail": "#Item_JHS33",
   "Health_Physical_Inventory": "#Item_JHS293",
   "SS_Feed": "#Item_JHS76",
   "SS_Health": "Item_JHS92",
@@ -149,8 +153,11 @@
   "Security_Setup": "#Item_JHS133",
 
   "Reports" : "#Item_JHS44",
+  "Daily_Reports": "#Item_JHS206",
+  "Daily_Report_Processing_Charges": "#Item_JHS209",
   "Actual_Feed" : "#Item_JHS214",
   "Lot_Health" : "#Item_JHS296",
+  "Reports_Feeding": "#Item_JHS324",
   "Summary_By_Owner" : "#Item_JHS301",
   "Daily_Feed_Per_Pen_Feed_In" : "#Item_JHS215",
   "R_Animal_health" : "#Item_JHS177",
@@ -158,11 +165,28 @@
   "Daily_Charges" : "#Item_JHS184",
   "R_Mortality" :"#Item_JHS192",
   "R_Listing" : "#Item_JHS320",
+  "R_Lists": "#Item_JHS166",
+  "R_List_PartnershipList":"#Item_JHS319",
+  "R_Commodity": "#Item_JHS196",
+  "R_Commodity_CommodityUsage" : "#Item_JHS200",
   "Daily_Report" : "#Item_JHS185",
   "R_lotsummary" :"#Item_JHS208",
   "Daily_Feed_Per_Pen_Feed_Out" : "#Item_JHS216",
   "Ration_Worksheet_Report" : "#Item_JHS218",
+<<<<<<< HEAD
   "R_lot": "#Item_JHS201",
   "R_customer_closeout": "#Item_JHS203",
   "R_Summary_by_buyer_Animal": "Item_JHS303"
+=======
+  "R_invoice" :"#Item_JHS221",
+  "R_InvoiceStatement" :"#Item_JHS316",
+  "R_Invoice_ChargeSummary_Lot" :"#Item_JHS222",
+  "R_lot" :"#Item_JHS201",
+  "R_Lot_Analysis" :"#Item_JHS237",
+  "R_Lot_DetailListing" :"#Item_JHS241",
+   "R_AnimalHealth_HospitalActivity" : "#Item_JHS186",
+  "R_AnimalHealth_PredefinedTreatment" : "#Item_JHS183",
+  "R_Feeding_DailyFeedCall" : "#Item_JHS327"
+
+>>>>>>> 125a35d69dcd7f86d49e1c7ce28c61a3e428dbbf
 }
