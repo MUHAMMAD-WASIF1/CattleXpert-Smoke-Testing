@@ -173,20 +173,7 @@
   "R_lotsummary" :"#Item_JHS208",
   "Daily_Feed_Per_Pen_Feed_Out" : "#Item_JHS216",
   "Ration_Worksheet_Report" : "#Item_JHS218",
-<<<<<<< HEAD
   "R_lot": "#Item_JHS201",
   "R_customer_closeout": "#Item_JHS203",
   "R_Summary_by_buyer_Animal": "Item_JHS303"
-=======
-  "R_invoice" :"#Item_JHS221",
-  "R_InvoiceStatement" :"#Item_JHS316",
-  "R_Invoice_ChargeSummary_Lot" :"#Item_JHS222",
-  "R_lot" :"#Item_JHS201",
-  "R_Lot_Analysis" :"#Item_JHS237",
-  "R_Lot_DetailListing" :"#Item_JHS241",
-   "R_AnimalHealth_HospitalActivity" : "#Item_JHS186",
-  "R_AnimalHealth_PredefinedTreatment" : "#Item_JHS183",
-  "R_Feeding_DailyFeedCall" : "#Item_JHS327"
-
->>>>>>> 125a35d69dcd7f86d49e1c7ce28c61a3e428dbbf
 }
