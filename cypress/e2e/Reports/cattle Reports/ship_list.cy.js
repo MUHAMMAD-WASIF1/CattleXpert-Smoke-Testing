@@ -37,6 +37,7 @@ cy.contains('Pen Num').should('exist');
 cy.contains('Gender').should('exist');
 cy.contains(/Head\s*Shipped/).should('exist');
 cy.contains(/Pay\s*Wght/).should('exist');
+cy.contains('Current Weight').should('exist');
 cy.contains(/Avg Ship\s*Wght/).should('exist');
 cy.contains('Gross').should('exist');
 cy.contains('Beef Cncl').should('exist');
@@ -69,7 +70,6 @@ cy.wait(2000);
 cy.contains(expectedData.Owner).should('exist');
 cy.contains(expectedData.Gender).should('exist');
 cy.contains(expectedData.Pen_Num).should('exist');
-  
-      
+   
       });
     }) 
