@@ -22,7 +22,7 @@ describe("LOGIN TO CATTLEXPERT WEBSITE", () => {
      cy.wait(2000);
 
      // Enter the Activity date
-     cy.get('#ctl00_ctl00_ContentPlaceHolder_RightSectionPlaceHolder_ReportViewer1_ctl04_ctl03_txtValue')
+     cy.get('#ctl00_ctl00_ContentPlaceHolder_RightSectionPlaceHolder_ReportViewer1_ctl04_ctl04_txtValue')
      .type("04/17/2025");
 
      // Click on the 'View Report' button
@@ -30,7 +30,7 @@ describe("LOGIN TO CATTLEXPERT WEBSITE", () => {
     .click();
      
     // Wait for the report to load
-    cy.wait(3000);
+    cy.wait(5000);
 
      // Verify the key headers of the report
      cy.contains('PEN').should('exist');
