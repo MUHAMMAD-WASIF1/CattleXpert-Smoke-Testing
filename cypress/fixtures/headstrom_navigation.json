@@ -171,6 +171,7 @@
   "R_Mortality" :"#Item_JHS192",
   "R_Listing" : "#Item_JHS320",
   "R_Lists": "#Item_JHS166",
+  "R_BuyerList":"#Item_JHS167",
   "R_List_PartnershipList":"#Item_JHS319",
   "R_Commodity": "#Item_JHS196",
   "R_Commodity_CommodityUsage" : "#Item_JHS200",
@@ -185,6 +186,8 @@
   "R_Feeding_DailyFeedCall": "#Item_JHS327",
   "R_Feeding_Loads_Per_Day":"#Item_JHS331",
   "R_invoice":"#Item_JHS221",
-  "R_InvoiceVariance":"#Item_JHS250"
+  "R_InvoiceVariance":"#Item_JHS250",
+  "R_Pens":"#Item_JHS282",
+  "R_Pen_ActiveHomePens": "#Item_JHS283"
   
 }
