@@ -25,25 +25,21 @@ describe("LOGIN TO CATTLEXPERT WEBSITE", () => {
 
     cy.wait(2000);
 
-    cy.get('#ctl00_ctl00_ContentPlaceHolder_RightSectionPlaceHolder_ReportViewer1_ctl04_ctl06_txtValue')
-    .invoke('val', '04/17/2025')
-    .trigger('input') // or 'change' if needed
-    .trigger('blur');
+    cy.get(
+      "#ctl00_ctl00_ContentPlaceHolder_RightSectionPlaceHolder_ReportViewer1_ctl04_ctl06_txtValue"
+    )
+      .invoke("val", "04/17/2025")
+      .trigger("input") // or 'change' if needed
+      .trigger("blur");
 
     cy.wait(2000);
 
-    // Click "View Report"
-    cy.get(
-        "#ctl00_ctl00_ContentPlaceHolder_RightSectionPlaceHolder_ReportViewer1_ctl04_ctl00"
-      ).click();
-
-    cy.wait(3000);  
-
     // Select "Feed Call" from dropdown
-    cy.get('#ctl00_ctl00_ContentPlaceHolder_RightSectionPlaceHolder_ReportViewer1_ctl04_ctl08_ddValue')
-    .should('not.be.disabled')
-    .select('1');
-  
+    cy.get(
+      "#ctl00_ctl00_ContentPlaceHolder_RightSectionPlaceHolder_ReportViewer1_ctl04_ctl08_ddValue"
+    )
+      .should("not.be.disabled")
+      .select("1");
 
     // Wait until the dependent dropdown is enabled
     cy.get(
@@ -74,21 +70,19 @@ describe("LOGIN TO CATTLEXPERT WEBSITE", () => {
 
     // Store expected values
     const expectedData = {
-        Pen_0011_Total: '1070',
-        Pen_0019_Total: '860',
-        Pen_0016_Total: '1060',
-        Pen_0023_Total: '1190',
-        Pen_00A1_Total: '790',
-        Pen_00A2_Total: '880',
-        Pen_00A3_Total: '610',
-        Pen_00A4_Total: '1330',
-        Pen_00A5_Total: '1320',
-        Pen_00A9_Total: '1320',
-        Pen_00A8_Total: '1320',
-        Pen_00A7_Total: '570',
-
+      Pen_0011_Total: "1070",
+      Pen_0019_Total: "860",
+      Pen_0016_Total: "1060",
+      Pen_0023_Total: "1190",
+      Pen_00A1_Total: "790",
+      Pen_00A2_Total: "880",
+      Pen_00A3_Total: "610",
+      Pen_00A4_Total: "1330",
+      Pen_00A5_Total: "1320",
+      Pen_00A9_Total: "1320",
+      Pen_00A8_Total: "1320",
+      Pen_00A7_Total: "570",
     };
-  
 
     // Navigate to Feed Call Pen Consumption
     cy.get(nav.Feed).click();
@@ -105,28 +99,24 @@ describe("LOGIN TO CATTLEXPERT WEBSITE", () => {
     cy.get("#ddlRouteNum").select("Feed Call").should("have.value", "JHS1");
 
     //Select ration
-    cy.get('#ddlRation').select('CNS starter');
+    cy.get("#ddlRation").select("CNS starter");
 
     //Click on the "Refresh" button
-    cy.get('#btnRefresh').click();
-    cy.wait(2000);  
-
+    cy.get("#btnRefresh").click();
+    cy.wait(2000);
 
     // Verify data in the Feed Status screen
-    cy.contains(expectedData.Pen_0011_Total).should('exist');
-    cy.contains(expectedData.Pen_0019_Total).should('exist');
-    cy.contains(expectedData.Pen_0016_Total).should('exist');
-    cy.contains(expectedData.Pen_0023_Total).should('exist');   
-    cy.contains(expectedData.Pen_00A1_Total).should('exist');
-    cy.contains(expectedData.Pen_00A2_Total).should('exist');
-    cy.contains(expectedData.Pen_00A3_Total).should('exist');
-    cy.contains(expectedData.Pen_00A4_Total).should('exist');
-    cy.contains(expectedData.Pen_00A5_Total).should('exist');
-    cy.contains(expectedData.Pen_00A9_Total).should('exist');
-    cy.contains(expectedData.Pen_00A8_Total).should('exist');
-    cy.contains(expectedData.Pen_00A7_Total).should('exist');
-
-
-    
+    cy.contains(expectedData.Pen_0011_Total).should("exist");
+    cy.contains(expectedData.Pen_0019_Total).should("exist");
+    cy.contains(expectedData.Pen_0016_Total).should("exist");
+    cy.contains(expectedData.Pen_0023_Total).should("exist");
+    cy.contains(expectedData.Pen_00A1_Total).should("exist");
+    cy.contains(expectedData.Pen_00A2_Total).should("exist");
+    cy.contains(expectedData.Pen_00A3_Total).should("exist");
+    cy.contains(expectedData.Pen_00A4_Total).should("exist");
+    cy.contains(expectedData.Pen_00A5_Total).should("exist");
+    cy.contains(expectedData.Pen_00A9_Total).should("exist");
+    cy.contains(expectedData.Pen_00A8_Total).should("exist");
+    cy.contains(expectedData.Pen_00A7_Total).should("exist");
   });
 });

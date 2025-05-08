@@ -188,6 +188,9 @@
   "R_invoice":"#Item_JHS221",
   "R_InvoiceVariance":"#Item_JHS250",
   "R_Pens":"#Item_JHS282",
-  "R_Pen_ActiveHomePens": "#Item_JHS283"
+  "R_Pen_ActiveHomePens": "#Item_JHS283",
+  "Mortality_Reports": "#Item_JHS192",
+  "Mortality_Reports_Rider_Analysis": "#Item_JHS323",
+  "ShowList_Report":"#Item_JHS288"
   
 }
