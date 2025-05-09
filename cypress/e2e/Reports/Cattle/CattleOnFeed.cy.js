@@ -13,7 +13,7 @@ describe("LOGIN TO CATTLEXPERT WEBSITE", () => {
   it("Generating and Verifying data of the Cattle on Feed Report", () => {
     login_headstrom();
 
-    // Navigate to the "Hospital Activity" report
+    // Navigate to the "Cattle On Feed" report
     cy.get(nav.Reports).click();
     cy.get(nav.R_Cattle).click();
     cy.get(nav.R_Cattle_CattleOnFeed).click();
