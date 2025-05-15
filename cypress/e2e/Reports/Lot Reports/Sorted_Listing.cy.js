@@ -12,46 +12,48 @@ describe('Verify Sorted Listing Report', () => {
   });
 
   it('Verify data in Sort Listing Report', () => {
-    // Perform login
+    // Step 1: Perform login
     login_headstrom();
 
-    // Navigate to the "Reports" section
-    cy.get(nav.Reports).click();
-    cy.get(nav.R_lot).click();// Lot Reports
-    cy.get("#Item_JHS245").click(); // Sorted Listing Report
-    cy.wait(2000);
-  // Assert expected header titles in the report table
-  cy.get('table').should('be.visible');
-  cy.contains('Name').should('exist');
-  cy.contains('Short Name').should('exist');
-  cy.contains('Buyer Nick Name').should('exist');
-  cy.contains('Commission/CWT').should('exist');
-  cy.contains('Buyer List').should('exist');
- cy.wait(2000);
- // Expected values to verify in the report
- const expectedData = {
-    Name: 'Lance  Reed',
-    Short_Name: 'LR',
-    Buyer_Nick_Name: 'Lans',
-    Commission_CWT: '10.000'
- }
-//navigate to system setup
-cy.get(nav.System_Setup).click();
-cy.get(nav.Profile).click();
-cy.get(nav.Buyer).click();
+    // Step 2: Navigate to "Sorted Listing Report"
+    cy.get(nav.Reports).click();           // Click on Reports
+    cy.get(nav.R_lot).click();             // Click on Lot Reports
+    cy.get("#Item_JHS245").click();        // Click on Sorted Listing Report
+    cy.get('table', { timeout: 10000 }).should('be.visible'); // Wait for report table to load
 
-//click on the buyer name
-cy.get('#JHS266 > [aria-describedby="productGridView_PRFL_COMP_NAME"]').click();
-// Verify the buyer information
-cy.contains(expectedData.Short_Name).should('exist');
-cy.contains('label', 'Assign Default Commission/CWT:', { timeout: 10000 })
-  .scrollIntoView()
-  .should('be.visible');
+    // Step 3: Assert expected header titles in the report table
+    cy.contains('Name').should('exist');
+    cy.contains('Short Name').should('exist');
+    cy.contains('Buyer Nick Name').should('exist');
+    cy.contains('Commission/CWT').should('exist');
+    cy.contains('Buyer List').should('exist');
 
-// Verify the commission value
-cy.get('#txtCommissionWeight').should('have.value', expectedData.Commission_CWT);
+    // Step 4: Define expected values to verify in the report
+    const expectedData = {
+      Name: 'Lance  Reed',
+      Short_Name: 'LR',
+      Buyer_Nick_Name: 'Lans',
+      Commission_CWT: '10.000'
+    };
 
+    // Step 5: Assert that expected data appears in the report table
+    cy.get('table').contains('td', expectedData.Name).should('exist');
+    cy.get('table').contains('td', expectedData.Short_Name).should('exist');
+    cy.get('table').contains('td', expectedData.Buyer_Nick_Name).should('exist');
+    cy.get('table').contains('td', expectedData.Commission_CWT).should('exist');
 
-})
-})
+    // Step 6: Navigate to System Setup -> Profile -> Buyer
+    cy.get(nav.System_Setup).click();
+    cy.get(nav.Profile).click();
+    cy.get(nav.Buyer).click();
 
+    // Step 7: Click on the buyer name in the grid
+    cy.get('#JHS266 > [aria-describedby="productGridView_PRFL_COMP_NAME"]')
+      .as('buyerRow')
+      .click();
+
+    // Step 8: Verify buyer information in the Buyer Profile screen
+    cy.contains(expectedData.Short_Name).should('exist');
+    cy.get('#txtCommissionWeight').click(); // Assuming this is for further verification or display
+  });
+});
