@@ -152,6 +152,7 @@
   "Owner": "#Item_JHS130",
   "Vendor": "#Item_JHS132",
   "Security_Setup": "#Item_JHS133",
+  "Lot_Detail": "#Item_JHS18",
 
   "Reports" : "#Item_JHS44",
   "R_Cattle":"#Item_JHS254",
