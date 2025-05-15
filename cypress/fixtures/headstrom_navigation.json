@@ -155,12 +155,14 @@
 
   "Reports" : "#Item_JHS44",
   "R_Cattle":"#Item_JHS254",
+  "R_Cattle_HeadCountsByGender": "#Item_JHS257",
   "R_Cattle_CattleOnFeed" : "#Item_JHS255",
   "R_Customer" : "#Item_JHS276",
   "R_Customer_ArrivalNotice" : "#Item_JHS277",
   "Daily_Reports": "#Item_JHS206",
   "Daily_Report_Processing_Charges": "#Item_JHS209",
   "Actual_Feed" : "#Item_JHS214",
+  "ActualFeed_VariableDayConsumption": "#Item_JHS291",
   "Lot_Health" : "#Item_JHS296",
   "Reports_Feeding": "#Item_JHS324",
   "Summary_By_Owner" : "#Item_JHS301",
@@ -192,6 +194,10 @@
   "Mortality_Reports": "#Item_JHS192",
   "Mortality_Reports_Rider_Analysis": "#Item_JHS323",
   "ShowList_Report":"#Item_JHS288",
-  "R_Cattle_Payables":"#Item_JHS261"
+  "R_Cattle_Payables":"#Item_JHS261",
+  "CommodityScaleTicket_Reports":"#Item_JHS267",
+  "R_CarrierPaidDates":"#Item_JHS273",
+  "R_CustomerList": "#Item_JHS170",
+  "R_LotAnalysisByDate": "#Item_JHS187"
   
 }
