@@ -28,7 +28,7 @@ describe("LOGIN TO CATTLEXPERT WEBSITE", () => {
    //wait for the report to load
     cy.wait(2000);
        // Invoke and store values
-    let Lot_Owner_Code, Lot_Owner_Own, Lot_Number,Lot_Invoice_Owner ;
+    let Lot_Owner_Code, Lot_Owner_Own, Lot_Number,Lot_Invoice_Owner, Total; ;
     cy.get("td")
       .contains("BS")
       .invoke("text")
@@ -56,6 +56,14 @@ describe("LOGIN TO CATTLEXPERT WEBSITE", () => {
       .then((text) => {
         Lot_Invoice_Owner = text.trim();
       });
+      cy.get("td")
+      .contains("4,522.190")
+      .first()
+      .invoke("text")
+      .then((text) => {
+        Total = text.trim();
+      });
+
 
       //navigate to Lot Detail page
       cy.get(nav.Processing).click();
@@ -65,9 +73,19 @@ describe("LOGIN TO CATTLEXPERT WEBSITE", () => {
       cy.wait(500); // Wait for autocomplete
       cy.get(".ui-menu-item").contains("CCC24-2").click(); // Click the option you want
 
-      cy.wait(2000); // Wait for the Lot Detail page to load
-      // Step 3: Verify Lot Owner andd lot number
-      cy.contains(Lot_Number).should("be.visible");// Verify Ration
-      cy.contains(Lot_Invoice_Owner).should("be.visible");// Verify Head
+      cy.wait(2000);
+      cy.scrollTo('bottom'); // Use lowercase 'bottom'
+
+      // Step 3: Verify Lot Owner and lot number
+      cy.get('#MovementHistoryGrid').within(() => {
+        cy.contains('td', Lot_Number).should('be.visible'); // Verify Lot Number in grid
+      });
+      cy.contains('button, span, a', 'Invoices').click(); // Click the Invoices tab by visible text
+      cy.wait(2000);
+      // Now verify the data in the Invoices tab grid
+      cy.contains('td', Lot_Owner_Code).should('be.visible'); // Verify Lot Owner Code in grid
+      cy.contains('td', Lot_Owner_Own).should('be.visible'); // Verify Lot Owner Own in grid
+      cy.contains('td', Lot_Invoice_Owner).should('be.visible'); // Verify Lot Invoice Owner in grid
+      cy.contains('td', Total).should('be.visible'); // Verify Total in grid
   });
-})
+});
