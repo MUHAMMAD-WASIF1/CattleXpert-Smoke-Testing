@@ -169,6 +169,8 @@
   "Summary_By_Owner" : "#Item_JHS301",
   "Daily_Feed_Per_Pen_Feed_In" : "#Item_JHS215",
   "R_Animal_health" : "#Item_JHS177",
+  "Clear_Report" : "#Item_JHS191",
+  "By_Pen" : "#Item_JHS194",
   "R_Dead_Medical_Reason" : "#Item_JHS179",
   "Daily_Charges" : "#Item_JHS184",
   "R_Mortality" :"#Item_JHS192",
