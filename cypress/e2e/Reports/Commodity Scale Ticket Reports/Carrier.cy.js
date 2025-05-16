@@ -78,7 +78,6 @@ describe("LOGIN TO CATTLEXPERT WEBSITE", () => {
      cy.contains(expectedData.Carrier).should('exist');
      cy.contains(expectedData.Vendor).should('exist');
      cy.contains(expectedData.Net_Weight).should('exist');
- 
 
   })
 })
