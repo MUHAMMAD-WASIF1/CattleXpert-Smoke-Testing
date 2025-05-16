@@ -41,7 +41,7 @@ Cypress.Commands.add('Login', () => {
 
   Cypress.Commands.add('dbsetup', () => {
   // Select 'jackson_beta' from the dropdown
-  cy.get('#ddlFeedyardList').select("jacksonsandbox-JKS2");
+  cy.get('#ddlFeedyardList').select("jheadstr-JKS4");
 
   //Select connect button 
   cy.get('#btnConnect').click();

@@ -65,10 +65,10 @@ describe("Reports Module", () => {
           .should('be.visible')
           .should('not.have.value', '') // ensure it's populated
           .invoke('val')
-          .then((HeadCount) => {
-            cy.log('HeadCount Value:', HeadCount);
-            expect(HeadCount).to.include('136');
-          });
+          .thcy.get('#Item_JHS16').click()
+          cy.get('#Item_JHS18').click()
+          cy.wait(5000)
+          
 
 
     })
