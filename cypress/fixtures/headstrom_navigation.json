@@ -201,6 +201,7 @@
   "CommodityScaleTicket_Reports":"#Item_JHS267",
   "R_CarrierPaidDates":"#Item_JHS273",
   "R_CustomerList": "#Item_JHS170",
-  "R_LotAnalysisByDate": "#Item_JHS187"
+  "R_LotAnalysisByDate": "#Item_JHS187",
+  "R_bylot": "Item_JHS193"
   
 }
